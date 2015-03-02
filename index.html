@@ -4,20 +4,28 @@
 	<!-- a head for all the heady/conceptual/meta stuff -->
 	<head>
 
-		<title><!-- your title goes here --></title>
+		<title> Faces</title>
 
 		<!-- this imports p5  -->
 		<script language="javascript" type="text/javascript" src="p5/p5.min.js"></script>
 		<script language="javascript" type="text/javascript" src="p5/addons/p5.dom.js"></script>
-
+		<link href='http://fonts.googleapis.com/css?family=Poiret+One|Amatic+SC:400,700|Indie+Flower' rel='stylesheet' type='text/css'>
 		<!-- here's your sketch! -->
 		<script>
 		// we're in javascript land now!
 		// (notice the different style of comments)
 
 		// here is where you declare your vars, like:
-		// var one = 1;
-
+	/*	 var row;
+		var column;
+		var max_rows;
+		var maax_columns;
+		var output;
+		var row_progress;
+*/
+var lineNumber = 0;
+var maxLines = 100;
+var output = '';
 	 /**
 	 * Setup - this is where you get things ready before running the loop
 	 */
@@ -31,7 +39,39 @@
 		 * Here's the draw loop! This is where all the fun stuff happens.
 		 */
 		function draw() {
-			// this will continue to loop
+			var elementTag = "span";
+			var elementClass = "";
+
+			if(lineNumber < maxLines){
+
+				if(lineNumber == 0){//option
+					output = "(o_o)";
+					elementClass ='introduction';
+					elementTag = "h1";
+				}else if(lineNumber == maxLines-1){//option
+					output = "(>_<)";
+					elementClass = "face";
+					elementTag = 'p'
+
+				}else if(lineNumber % 2 == 0){//option
+					output = "(-_-)";
+					//elementClass = "tired";
+					//elementTag = 'p';
+					//gives options ^
+				}else if (lineNumber % 3 == 0){
+					output = " I Am Sleepy ...";
+				}else if (lineNumber > maxLines){
+					output = "(>_<)";
+				}else {
+					output = "(o_o)";
+					elementClass = "introduction";
+				}
+
+				element = createElement(elementTag, output);
+				element.addClass(elementClass);
+				lineNumber = lineNumber + 1;
+			}
+
 		}
 
 		// now leaving the land of javascript...
@@ -42,16 +82,33 @@
 			body {
 				padding: 0;
 				margin: 0;
-				font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+				font-family: 'Poiret One', cursive;
+				font-size: 240%;
+				color = "blue";
+
+			}
+			.introduction {
+				font-weight: bold;
+				font-family: 'Amatic SC', cursive;
+				color: #19D1A3;
 				font-size: 200%;
 			}
+			.face {
+				color: blue;
+				font-family: 'Indie Flower', cursive;
+				font-size: 300%;
+			}
+
+
+
 		</style>
 
 	</head>
 
+
 	<!-- a body for the meat/data/content -->
 	<body>
-
+Tired?
 	</body>
 
 </html>
