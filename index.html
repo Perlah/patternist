@@ -24,7 +24,7 @@
 		var row_progress;
 */
 var lineNumber = 0;
-var maxLines = 100;
+var maxLines = 300;
 var output = '';
 	 /**
 	 * Setup - this is where you get things ready before running the loop
@@ -45,25 +45,25 @@ var output = '';
 			if(lineNumber < maxLines){
 
 				if(lineNumber == 0){//option
-					output = "(o_o)";
+					output = "&#10016";//top cross
 					elementClass ='introduction';
 					elementTag = "h1";
 				}else if(lineNumber == maxLines-1){//option
-					output = "(>_<)";
+					output = "&#10016 &#10018 &#10016 &#10023 &#10018"; // bottom crosses
 					elementClass = "face";
 					elementTag = 'p'
 
 				}else if(lineNumber % 2 == 0){//option
-					output = "(-_-)";
+					output = "&#10019 &#10020 &#10021 &#10023"; //crosses thick,thin,open,star
 					//elementClass = "tired";
 					//elementTag = 'p';
 					//gives options ^
 				}else if (lineNumber % 3 == 0){
-					output = " I Am Sleepy ...";
+					output = " &#9747"; // x
 				}else if (lineNumber > maxLines){
-					output = "(>_<)";
+					output = ">_<";
 				}else {
-					output = "(o_o)";
+					output = "&#10022 &#9810";
 					elementClass = "introduction";
 				}
 
@@ -83,7 +83,7 @@ var output = '';
 				padding: 0;
 				margin: 0;
 				font-family: 'Poiret One', cursive;
-				font-size: 240%;
+				font-size: 200%;
 				color = "blue";
 
 			}
@@ -96,7 +96,7 @@ var output = '';
 			.face {
 				color: blue;
 				font-family: 'Indie Flower', cursive;
-				font-size: 300%;
+				font-size: 250%;
 			}
 
 
@@ -108,7 +108,7 @@ var output = '';
 
 	<!-- a body for the meat/data/content -->
 	<body>
-Tired?
+
 	</body>
 
 </html>
